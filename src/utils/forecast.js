@@ -10,7 +10,7 @@ const forecast=(lat, long, callback)=>{
         } else if(response.body.error){
             callback('Unable to find coordinates. Try another search.',undefined)
         } else{
-            callback(undefined,response.body.current.weather_descriptions[0] + ', It is currently ' + response.body.current.temperature + ' degress out. And it seems to be ' + response.body.current.feelslike + ' out.')
+            callback(undefined,response.body.current.weather_descriptions[0] + ', It is currently ' + response.body.current.temperature + ' degress out. And it seems to be ' + response.body.current.feelslike + ' out. And the humidity is : '+response.body.current.humidity)
         }
     })
 }
